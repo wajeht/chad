@@ -1,6 +1,6 @@
 https://github.com/user-attachments/assets/69f13181-02f4-4fa8-b913-483b482049c7
 
-# 🗿 Chad
+# Chad
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/wajeht/bro/blob/main/LICENSE)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/wajeht/bro)
@@ -8,7 +8,11 @@ https://github.com/user-attachments/assets/69f13181-02f4-4fa8-b913-483b482049c7
 
 A personal AI assistant that seamlessly embeds into every text area
 
-# 📥 Installation
+> [!WARNING]
+> **This codebase is no longer actively maintained.** The package will continue working, but support and changes are no longer provided.
+
+
+# Installation
 
 > [!IMPORTANT]
 > This extension is not available on the Chrome Web Store. We will not be publishing it there.
@@ -22,18 +26,18 @@ A personal AI assistant that seamlessly embeds into every text area
 7. Enter your OpenAI API key and select your preferred model
 8. Save the settings
 
-# 🎯 Usage
+# Usage
 
 1. After installation, you'll see a 🗿 button appear in the bottom-right corner of any textarea
 2. Click the button to have AI assist you with your text
 3. The extension will stream the AI's response directly into your textarea
 4. You can customize the prompt and ignored URLs in the extension settings
 
-# 📑 Docs
+# Docs
 
 - See [DEVELOPMENT](./docs/development.md) for `development` guide.
 - See [CONTRIBUTION](./docs/contribution.md) for `contribution` guide.
 
-# 📜 License
+# License
 
 Distributed under the MIT License © [wajeht](https://github.com/wajeht). See [LICENSE](./LICENSE) for more information.
