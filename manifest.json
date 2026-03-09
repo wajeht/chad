@@ -5,7 +5,8 @@
   "description": "A personal AI assistant that seamlessly embeds into every text area",
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "tabs"
   ],
   "icons": {
     "16": "./assets/chad.png",

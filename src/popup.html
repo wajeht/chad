@@ -7,28 +7,30 @@
     <title>Chad</title>
     <style>
         body {
-            width: 250px;
-            padding: 10px;
+            width: 350px;
+            padding: 20px;
             height: fit-content;
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
             color: #333;
+            margin: 0;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .form-group label {
             display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
+            font-weight: 600;
+            margin-bottom: 8px;
             font-size: 14px;
+            color: #444;
         }
 
         .form-group .optional {
             color: #777;
-            font-weight: normal;
+            font-weight: 400;
             font-size: 12px;
         }
 
@@ -36,12 +38,21 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-bottom: 10px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 13px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4285f4;
+            outline: none;
         }
 
         .form-group textarea {
@@ -51,13 +62,14 @@
 
         button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #4285f4;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: 600;
             transition: background-color 0.3s ease;
         }
 
@@ -67,6 +79,112 @@
 
         button:active {
             background-color: #2a56c7;
+        }
+
+
+        .domain-selectors {
+            max-height: 200px;
+            overflow-y: auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .domain-group {
+            margin-bottom: 10px;
+        }
+
+        .domain-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .selector-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+        }
+
+        .selector-item:hover {
+            background-color: #f1f1f1;
+        }
+
+        .delete-selector {
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 3px 7px;
+            width: fit-content;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-selector:hover {
+            background: #cc0000;
+        }
+
+        .no-selectors {
+            color: #666;
+            font-style: italic;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .selector-info {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .selector-text {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #444;
+            font-size: 13px;
+        }
+
+        .url-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .url-text {
+            font-size: 12px;
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .selector-prompt {
+            width: 100%;
+            margin-top: 8px;
+            padding: 8px;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 60px;
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        .selector-prompt:focus {
+            border-color: #4285f4;
+            outline: none;
         }
     </style>
 </head>
@@ -87,14 +205,12 @@
     </div>
 
     <div class="form-group">
-        <label for="customPrompt">Custom Prompt <span class="optional">(optional)</span></label>
-        <textarea id="customPrompt" placeholder="Enter your custom prompt"></textarea>
+        <label>Saved Elements by Domain</label>
+        <div id="domainSelectors" class="domain-selectors">
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="ignoredUrls">Ignored URLs <span class="optional">(separate by new line)</span></label>
-        <textarea id="ignoredUrls" placeholder="Enter URLs to ignore"></textarea>
-    </div>
+    <button id="toggleSelector" style="margin-bottom: 10px;">Enable Element Selector</button>
 
     <button id="saveSettings">Save</button>
     <script src="popup.js"></script>
